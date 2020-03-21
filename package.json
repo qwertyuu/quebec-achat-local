@@ -1,0 +1,37 @@
+{
+  "name": "quebec-achat-local",
+  "version": "0.0.1",
+  "description": "Preuve de concept pour les québecois qui veulent acheter local pendant la crise du COVID-19",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4",
+    "google-spreadsheet": "^3.0.9",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {},
+  "preinstall": "node gcpSetup.js",
+  "scripts": {
+    "start": "node index.js",
+    "heroku": "git push heroku master && heroku logs --tail",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qwertyuu/quebec-achat-local.git"
+  },
+  "keywords": [
+    "covid",
+    "local",
+    "quebec",
+    "achat",
+    "web"
+  ],
+  "author": "Raphaël Côté",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qwertyuu/quebec-achat-local/issues"
+  },
+  "homepage": "https://github.com/qwertyuu/quebec-achat-local#readme"
+}
