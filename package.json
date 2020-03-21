@@ -8,12 +8,14 @@
     "pug": "^2.0.4",
     "google-spreadsheet": "^3.0.9",
     "dotenv": "^8.2.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "acorn": ">=5.7.4"
   },
   "devDependencies": {},
   "preinstall": "node gcpSetup.js",
   "scripts": {
     "start": "node index.js",
+    "preinstall": "node gcpSetup.js",
     "heroku": "git push heroku master && heroku logs --tail",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
