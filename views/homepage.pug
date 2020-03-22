@@ -1,6 +1,6 @@
 doctype html
 head
-    title Québec achat local
+    title QcAL - Québec achat local
     include header
 - const propose_service_raw = "https://docs.google.com/forms/d/e/1FAIpQLSeYb-RmDHXr4xKyAd6rpK_iAa7qivhYKKR_B3Bp8sg5KTEx-Q/viewform?usp=pp_url&entry.439997998=";
 - const propose_service = propose_service_raw + "Tout+le+Qu%C3%A9bec";
@@ -37,7 +37,7 @@ head
             each resource in resources
                 .item
                     .content
-                        a.header(href=resource.lien) #{resource.titre}
+                        a.header(href=resource.lien target="_blank") #{resource.titre}
                         .description
                             p !{resource.description}
                         .extra
