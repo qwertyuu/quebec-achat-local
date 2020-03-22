@@ -16,7 +16,7 @@ doc.useServiceAccountAuth(require(process.env.GOOGLE_SERVICE_ACCOUNT_JSON)).then
         let regions = await regionsSheet.getRows();
 
         const syncData = async () => {
-            resources = await resourcesSheet.getRows();
+            resources = (await resourcesSheet.getRows()).filter(resource => resource.live === '1');
         };
         await syncData();
         setInterval(syncData, 2000);
