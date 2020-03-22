@@ -28,20 +28,19 @@ doc.useServiceAccountAuth(require(process.env.GOOGLE_SERVICE_ACCOUNT_JSON)).then
             let region = req.query.region;
             let queryResources;
             let currentRegion;
-            if (region && region !== 'all') {
+            if (region) {
                 currentRegion = regions.find((regionFilter) => {
                     return region === regionFilter.code;
                 });
+            }
+            if (currentRegion) {
                 queryResources = resources.filter((resource) => {
                     return resource.region === region;
                 });
-            }
-            if (!currentRegion) {
+            } else {
                 currentRegion = regions.find((regionFilter) => {
                     return regionFilter.code === 'all';
                 });
-            }
-            if (!queryResources || queryResources.length === 0) {
                 queryResources = resources.filter((resource) => {
                     return resource.region === 'all';
                 });
