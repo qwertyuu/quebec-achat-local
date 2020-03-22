@@ -3,7 +3,7 @@ const compression = require("compression"); // Express web server framework
 const app = express();
 app.use('/semantic/dist', express.static('semantic/dist'));
 app.use('/assets', express.static('assets'));
-app.use(compression({ filter: shouldCompress }));
+app.use(compression({filter: shouldCompress}));
 const {GoogleSpreadsheet} = require('google-spreadsheet');
 require('dotenv').config();
 
@@ -39,19 +39,25 @@ doc.useServiceAccountAuth(require(process.env.GOOGLE_SERVICE_ACCOUNT_JSON)).then
                     return 'all' === regionFilter.code;
                 });
             }
-            res.render('homepage', {resources: queryResources, regions, currentRegion});
+            const hostname = req.protocol + '://' + req.get('host');
+            res.render('homepage', {
+                resources: queryResources,
+                regions, currentRegion,
+                hostname,
+                fullUrl: hostname + req.originalUrl,
+            });
         });
 
         app.listen(process.env.PORT || 3000);
     });
 });
 
-function shouldCompress (req, res) {
-  if (req.headers['x-no-compression']) {
-    // don't compress responses with this request header
-    return false;
-  }
+function shouldCompress(req, res) {
+    if (req.headers['x-no-compression']) {
+        // don't compress responses with this request header
+        return false;
+    }
 
-  // fallback to standard filter function
-  return compression.filter(req, res);
+    // fallback to standard filter function
+    return compression.filter(req, res);
 }
