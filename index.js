@@ -4,6 +4,7 @@ const app = express();
 app.use('/semantic/dist', express.static('semantic/dist'));
 app.use('/assets', express.static('assets'));
 app.use(compression({filter: shouldCompress}));
+app.enable('trust proxy');
 const {GoogleSpreadsheet} = require('google-spreadsheet');
 require('dotenv').config();
 
