@@ -1,0 +1,70 @@
+doctype html
+head
+    title Québec achat local
+    include header
+- const propose_service_raw = "https://docs.google.com/forms/d/e/1FAIpQLSeYb-RmDHXr4xKyAd6rpK_iAa7qivhYKKR_B3Bp8sg5KTEx-Q/viewform?usp=pp_url&entry.439997998=";
+- const propose_service = propose_service_raw + "Tout+le+Qu%C3%A9bec";
+// Following Menu
+.ui.large.top.fixed.hidden.menu
+    .ui.container
+        h3.item.header Québec achat local
+        .right.menu
+            .item.about
+                a.ui.button(href="#about") À propos
+            .item
+                a.ui.button(href=propose_service target="_blank") Proposer un service
+
+// Page Contents
+.ui.inverted.vertical.masthead.center.aligned.segment#main-image
+    .ui.container
+        .ui.large.secondary.inverted.pointing.menu.bg-qc
+            h3.item.header Québec achat local
+            .right.menu
+                .item
+                    a.ui.inverted.button.about(href="#about") À propos
+                    a.ui.inverted.button(href=propose_service target="_blank") Proposer un service
+    .ui.text.container
+        h1.ui.inverted.header
+            | Québec achat local
+        h2.ui.inverted.header Choisissez votre région
+        select#region-select(name='region')
+            each region in regions
+                option(value=region.code selected=currentRegion.code === region.code) #{region.nom}
+.ui.container.main
+    h1 Resources pour #{currentRegion.nom}
+    .ui.segment
+        .ui.items.divided
+            each resource in resources
+                .item
+                    .content
+                        a.header(href=resource.lien) #{resource.titre}
+                        .description
+                            p !{resource.description}
+                        .extra
+                            if resource.livraison === '1'
+                                .ui.label Livraison à domicile
+                            if resource.preparation_commande === '1'
+                                .ui.label Préparation de commande
+            else
+                h3 Aucune resource disponible pour le moment.
+                h4 Vous pouvez en soumettre une vous-même pour "#{currentRegion.nom}" #[a(href=propose_service_raw + currentRegion.nom target="_blank") en cliquant ici].
+    h1#about À propos
+    .ui.segment
+        p Ce site a pour but d'informer les québécois sur les places disponibles dans leur région ou dans la province, qu'ils peuvent utiliser pendant le confinement, afin de centraliser l'information.
+        p Si vous avez des questions ou commentaires, voir le bas de page afin de trouver mes informations de contact
+
+.ui.inverted.vertical.footer.segment
+    .ui.container
+        .ui.stackable.inverted.divided.equal.height.stackable.grid
+            .nine.wide.column
+                h4.ui.inverted.header Liens utiles
+                .ui.inverted.link.list
+                    a.item(href='https://github.com/qwertyuu/quebec-achat-local') Source Github
+                    a.item(href=propose_service target="_blank") Proposer un service
+            .seven.wide.column
+                h4.ui.inverted.header Nature du site
+                p
+                    | Fait par #[a(href="https://raphaelcote.com" target="_blank") Raphaël Côté] afin d'aider les québécois à acheter local
+                p
+                    | Si vous souhaitez améliorer ce site, n'hésitez pas à visiter la page #[a(href="https://github.com/qwertyuu/quebec-achat-local") GitHub] ou à me contacter sur #[a(href="https://m.me/qwertyuu" target="_blank") messenger] ou par #[a(href="mailto:cotlarrc@gmail.com") courriel]
+script(src='assets/main.js')
