@@ -1,7 +1,9 @@
-const express = require('express'); // Express web server framework
+const express = require('express');
+const compression = require("compression"); // Express web server framework
 const app = express();
 app.use('/semantic/dist', express.static('semantic/dist'));
 app.use('/assets', express.static('assets'));
+app.use(compression({ filter: shouldCompress }));
 const {GoogleSpreadsheet} = require('google-spreadsheet');
 require('dotenv').config();
 
@@ -43,3 +45,13 @@ doc.useServiceAccountAuth(require(process.env.GOOGLE_SERVICE_ACCOUNT_JSON)).then
         app.listen(process.env.PORT || 3000);
     });
 });
+
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false;
+  }
+
+  // fallback to standard filter function
+  return compression.filter(req, res);
+}
