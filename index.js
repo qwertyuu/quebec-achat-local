@@ -36,7 +36,10 @@ doc.useServiceAccountAuth(require(process.env.GOOGLE_SERVICE_ACCOUNT_JSON)).then
                 });
             } else {
                 currentRegion = regions.find((regionFilter) => {
-                    return 'all' === regionFilter.code;
+                    return regionFilter.code === 'all';
+                });
+                queryResources = queryResources.filter((resource) => {
+                    return resource.region === 'all';
                 });
             }
             const hostname = req.protocol + '://' + req.get('host');

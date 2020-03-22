@@ -42,9 +42,9 @@ head
                             p !{resource.description}
                         .extra
                             if resource.livraison === '1'
-                                .ui.label Livraison à domicile
+                                .ui.large.label Livraison à domicile
                             if resource.preparation_commande === '1'
-                                .ui.label Préparation de commande
+                                .ui.large.label Préparation de commande
             else
                 h3 Aucune resource disponible pour le moment.
                 h4 Vous pouvez en soumettre une vous-même pour "#{currentRegion.nom}" #[a(href=propose_service_raw + currentRegion.nom target="_blank") en cliquant ici].
