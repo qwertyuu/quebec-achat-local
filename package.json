@@ -13,7 +13,7 @@
     "semantic-ui": "^2.4.2"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": "10.x"
   },
   "devDependencies": {},
   "preinstall": "node gcpSetup.js",
