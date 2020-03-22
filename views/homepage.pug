@@ -41,6 +41,7 @@ head
                         .description
                             p !{resource.description}
                         .extra
+                            .ui.large.label #{resource.type}
                             if resource.livraison === '1'
                                 .ui.large.label Livraison à domicile
                             if resource.preparation_commande === '1'
