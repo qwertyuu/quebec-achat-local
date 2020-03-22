@@ -35,9 +35,9 @@ head
     .ui.segment
         .ui.items.divided
             each resource in resources
-                .item
+                a.item(href=resource.lien target="_blank")
                     .content
-                        a.header(href=resource.lien target="_blank") #{resource.titre}
+                        .header #{resource.titre}
                         .description
                             p !{resource.description}
                         .extra
