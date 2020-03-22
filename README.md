@@ -11,3 +11,8 @@ Preuve de concept pour les québecois qui veulent acheter local pendant la crise
 1. Effectuer la commande `npm ci`
 
 Vous pouvez maintenant soit utiliser le truc comme tel en lançant `npm start` ou bien en vous créant un lien avec un compte heroku et en faisant `npm run heroku` pour déployer
+Pour heroku, vous devez définir les clés d'environnement suivantes:
+
+- GCP_CRED: le contenu du fichier .json de la clé de service google
+- GOOGLE_SERVICE_ACCOUNT_JSON: `./gcpconfig.json`
+- GOOGLE_SHEET_ID: l'identifiant de la sheet créée pour la base de données
