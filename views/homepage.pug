@@ -31,24 +31,12 @@ head
             each region in regions
                 option(value=region.code selected=currentRegion.code === region.code) #{region.nom}
 .ui.container.main
-    h1 Resources pour #{currentRegion.nom}
-    .ui.segment
-        .ui.items.divided
-            each resource in resources
-                a.item(href=resource.lien target="_blank")
-                    .content
-                        .header #{resource.titre}
-                        .description
-                            p !{resource.description}
-                        .extra
-                            .ui.large.label #{resource.type}
-                            if resource.livraison === '1'
-                                .ui.large.label Livraison à domicile
-                            if resource.preparation_commande === '1'
-                                .ui.large.label Cueillette sur place
-            else
-                h3 Aucune ressource n'est disponible pour le moment.
-                h4 Vous pouvez en soumettre une vous-même pour "#{currentRegion.nom}" #[a(href=propose_service_raw + currentRegion.nom target="_blank") en cliquant ici].
+    include resourceList
+    if currentRegion.code !== 'all'
+        h1 Resources pour #{currentRegion.nom}
+        +resourceList(regionResources, currentRegion)
+    h1 Resources pour #{allRegion.nom}
+    +resourceList(allResources, allRegion)
     h1#about À propos
     .ui.segment
         p Ce site a pour but d'informer les québécois·es sur les détaillants de produits locaux disponibles dans leur région ou dans la province pendant la période de confinement afin de limiter les sorties.
