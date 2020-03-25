@@ -1,0 +1,4 @@
+region,titre,type,lien,description,livraison,preparation_commande,live
+2,Marché Axep,Épicerie,https://www.circulaire-en-ligne.ca/axep,"Épicerie qui contient une large gamme de produits, tels que de la charcuterie, de la bière, des sauces piquantes, des et aliments locaux multiples",1,1,1
+all,Uniprix,Pharmacie,https://www.uniprix.com/fr/services/services-de-livraison,"La pharmacie Uniprix peut prendre votre commande de médicaments et d'éléments disponible sur place, par exemple cosmétiques ou autres et vous le livrer chez vous",1,1,1
+all,metro,Épicerie,https://www.metro.ca/faq/commande-en-ligne,"L'épicerie très connue offre les commandes en ligne, la livraison et la ceuillette de tous ses produits",1,1,1

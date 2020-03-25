@@ -104,3 +104,6 @@ typings/
 .idea
 .env
 local/
+assets/semantic/gulpfile.js
+assets/semantic/tasks
+assets/semantic/src
