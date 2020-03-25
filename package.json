@@ -8,7 +8,6 @@
     "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "fomantic-ui": "^2.8.4",
     "google-spreadsheet": "^3.0.10",
     "gulp": "^4.0.2",
     "lodash": "^4.17.15",
@@ -20,7 +19,8 @@
   },
   "devDependencies": {
     "inquirer": "^7.1.0",
-    "csv-parse": "^4.8.8"
+    "csv-parse": "^4.8.8",
+    "fomantic-ui": "^2.8.4"
   },
   "scripts": {
     "start": "node src/index.js",
