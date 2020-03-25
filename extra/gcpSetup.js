@@ -1,7 +1,6 @@
-if (process.env.GOOGLE_SERVICE_ACCOUNT_FILENAME && process.env.GCP_CRED) {
+if (process.env.GOOGLE_SERVICE_ACCOUNT_JSON && process.env.GCP_CRED) {
     var fs = require('fs');
-    var path = require('path');
-    fs.writeFileSync(path.join(__dirname, '/../../' + process.env.GOOGLE_SERVICE_ACCOUNT_FILENAME), process.env.GCP_CRED);
+    fs.writeFileSync(process.env.GOOGLE_SERVICE_ACCOUNT_JSON, process.env.GCP_CRED);
 } else {
     console.log("No files to copy, skipping setup");
 }
