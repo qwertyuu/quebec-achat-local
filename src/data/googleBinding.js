@@ -1,9 +1,8 @@
 const {GoogleSpreadsheet} = require('google-spreadsheet');
-const fs = require("fs");
 
 module.exports = (datasetsToBind) => {
     const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID);
-    doc.useServiceAccountAuth(fs.readFileSync(process.env.GOOGLE_SERVICE_ACCOUNT_JSON)).then(() => {
+    doc.useServiceAccountAuth(JSON.parse(process.env.GCP_CRED)).then(() => {
         doc.loadInfo().then(async () => {
             const resourcesSheet = doc.sheetsByIndex[0];
             const regionsSheet = doc.sheetsByIndex[1];
