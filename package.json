@@ -4,14 +4,16 @@
   "description": "Preuve de concept pour les québecois qui veulent acheter local pendant la crise du COVID-19",
   "main": "index.js",
   "dependencies": {
-    "acorn": ">=5.7.4",
+    "acorn": ">=7.1.1",
     "compression": "^1.7.4",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "google-spreadsheet": "^3.0.9",
+    "fomantic-ui": "^2.8.4",
+    "google-spreadsheet": "^3.0.10",
+    "gulp": "^4.0.2",
     "lodash": "^4.17.15",
     "pug": "^2.0.4",
-    "semantic-ui": "^2.4.2"
+    "yargs": "^15.3.1"
   },
   "engines": {
     "node": "10.x"
