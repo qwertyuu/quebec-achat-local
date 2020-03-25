@@ -1,7 +1,7 @@
 {
   "name": "quebec-achat-local",
   "version": "0.0.1",
-  "description": "Preuve de concept pour les québecois qui veulent acheter local pendant la crise du COVID-19",
+  "description": "Site pour les québécois qui veulent investir dans la consommation locale",
   "main": "index.js",
   "dependencies": {
     "acorn": ">=7.1.1",
@@ -12,8 +12,8 @@
     "google-spreadsheet": "^3.0.10",
     "gulp": "^4.0.2",
     "lodash": "^4.17.15",
-    "pug": "^2.0.4",
-    "yargs": "^15.3.1"
+    "minimist": "^1.2.5",
+    "pug": "^2.0.4"
   },
   "engines": {
     "node": "10.x"
