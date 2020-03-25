@@ -25,7 +25,6 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node src/index.js --source=csv",
-    "preinstall": "node extra/gcpSetup.js",
     "heroku": "git push heroku master && heroku logs --tail",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
