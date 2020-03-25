@@ -12,7 +12,7 @@ module.exports = (datasetsToBind) => {
                 datasetsToBind.resources = (await resourcesSheet.getRows()).filter(resource => resource.live === '1');
             };
             await syncData();
-            //setInterval(syncData, 2000);
+            setInterval(syncData, 2000);
         });
     });
 };
