@@ -9,7 +9,7 @@ Site pour les québécois qui veulent investir dans la consommation locale au Qu
 
 Choses importantes à savoir pour développer ce projet:
 
-- Pour le moment, (Pug)[https://pugjs.org/api/getting-started.html] est utilisé comme "view engine" et c'est lui qui fait le rendu HTML des pages
+- Pour le moment, [Pug](https://pugjs.org/api/getting-started.html) est utilisé comme "view engine" et c'est lui qui fait le rendu HTML des pages
 - La base de donnée de "développement" est un ensemble de fichiers csv avec la même forme que les feuilles en production (voir le dossier "src/storage")
 - La base de donnée de "production" est une Google Spreadsheet
 - Vous êtes beau et vous sentez très bon
@@ -28,5 +28,4 @@ Vous pouvez maintenant soit utiliser le truc comme tel en lançant `npm start` o
 Pour heroku, vous devez définir les clés d'environnement suivantes:
 
 - GCP_CRED: le contenu du fichier .json de la clé de service google
-- GOOGLE_SERVICE_ACCOUNT_JSON: `./gcpconfig.json`
 - GOOGLE_SHEET_ID: l'identifiant de la sheet créée pour la base de données
