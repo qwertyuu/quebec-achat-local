@@ -12,6 +12,8 @@ module.exports = (datasetsToBind) => {
                 datasetsToBind.resources = (await resourcesSheet.getRows()).filter(resource => resource.live === '1');
             };
             await syncData();
+            // À toutes les 2 secondes, on sonde le spreadsheet et on met à jour les ressources
+            // Le max de requêtes aux Google Api c'est 100 par 100 secondes
             setInterval(syncData, 2000);
         });
     });

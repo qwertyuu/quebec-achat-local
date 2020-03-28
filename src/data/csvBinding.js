@@ -10,7 +10,7 @@ module.exports = (resourcesFile, regionsFile, datasetsToBind) => {
         datasetsToBind.resources = csvParse(fs.readFileSync(resourcesFile), {
             columns: true,
             skip_empty_lines: true
-        });
+        }).filter(resource => resource.live === '1');
     };
     syncData();
     setInterval(syncData, 2000);
