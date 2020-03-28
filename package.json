@@ -19,12 +19,13 @@
     "node": "10.x"
   },
   "devDependencies": {
+    "fomantic-ui": "^2.8.4",
     "inquirer": "^7.1.0",
-    "fomantic-ui": "^2.8.4"
+    "nodemon": "^2.0.2"
   },
   "scripts": {
     "start": "node src/index.js",
-    "dev": "node src/index.js --source=csv",
+    "dev": "nodemon -e js,pug src/index.js --source=csv",
     "heroku": "git push heroku master && heroku logs --tail",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
