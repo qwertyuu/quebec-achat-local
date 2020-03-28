@@ -1,18 +1,18 @@
 {
   "name": "quebec-achat-local",
   "version": "0.0.1",
-  "description": "Site pour les québécois qui veulent investir dans la consommation locale",
+  "description": "Site pour les québécois(es) qui veulent investir dans la consommation locale",
   "main": "src/index.js",
   "dependencies": {
     "acorn": ">=7.1.1",
     "compression": "^1.7.4",
+    "csv-parse": "^4.8.8",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "google-spreadsheet": "^3.0.10",
     "gulp": "^4.0.2",
     "lodash": "^4.17.15",
     "minimist": "^1.2.5",
-    "csv-parse": "^4.8.8",
     "pug": "^2.0.4"
   },
   "engines": {

@@ -113,6 +113,7 @@ style(type='text/css').
     }
 script(src='https://code.jquery.com/jquery-3.4.1.min.js' integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=' crossorigin='anonymous')
 script(src='assets/semantic/dist/semantic.min.js')
+script(src='assets/Autolinker.min.js')
 script.
     $(function () {
         // fix menu when passed
@@ -129,4 +130,31 @@ script.
         // create sidebar and attach to menu open
         $('.ui.sidebar')
             .sidebar('attach events', '.toc.item');
+
+        var autolinker = new Autolinker({
+            urls: {
+                schemeMatches: false,
+                wwwMatches: false,
+                tldMatches: false
+            },
+            email: false,
+            phone: true,
+            mention: false,
+            hashtag: false,
+
+            stripPrefix: false,
+            stripTrailingSlash: false,
+            newWindow: false,
+
+            truncate: {
+                length: 0,
+                location: 'end'
+            },
+
+            className: ''
+        });
+
+        $('.description').each(function (index, element) {
+            element.outerHTML = autolinker.link(element.outerHTML);
+        });
     });
