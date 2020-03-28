@@ -1,0 +1,16 @@
+mixin resource(data)
+    .item
+        .content
+            .header #{data.titre}
+            .description
+                p !{data.description}
+            .extra
+                if data.lien.length > 0
+                    a.ui.right.floated.primary.button(href=data.lien target="_blank")
+                        | En savoir plus
+                        i.right.chevron.icon
+                .ui.large.label #{data.type}
+                if data.livraison === '1'
+                    .ui.large.label Livraison à domicile
+                if data.preparation_commande === '1'
+                    .ui.large.label Cueillette sur place
