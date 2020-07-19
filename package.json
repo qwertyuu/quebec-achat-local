@@ -11,7 +11,7 @@
     "express": "^4.17.1",
     "google-spreadsheet": "^3.0.10",
     "gulp": "^4.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "minimist": "^1.2.5",
     "pug": "^2.0.4"
   },
