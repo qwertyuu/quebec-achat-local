@@ -14,7 +14,11 @@ $.extend({
     getUrlWithoutVars: function() {
         const qStringSeparatorPos = window.location.href.indexOf('?');
         if (qStringSeparatorPos === -1) {
-            return window.location.href;
+            const qHashtagPos = window.location.href.indexOf('#');
+            if (qHashtagPos === -1) {
+                return window.location.href;
+            }
+            return window.location.href.slice(0, qHashtagPos);
         }
         return window.location.href.slice(0, qStringSeparatorPos);
     },
